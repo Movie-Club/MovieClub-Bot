@@ -1,23 +1,23 @@
 import asyncio 
 
-from pyrogram import Client as LuciferMovie_Bot
+from pyrogram import Client as lucifermoringstar_robot
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram.errors import UserIsBlocked, PeerIdInvalid
 
-from LuciferMovie_Bot.admins.index_files import index_files_to_db
-from LuciferMovie_Bot.database.autofilter_db import get_file_details
-from LuciferMovie_Bot.database._utils import get_size, is_subscribed
-from LuciferMovie_Bot.database._utils import lucifer_temp
+from LuciferMoringstar_Robot.admins.index_files import index_files_to_db
+from LuciferMoringstar_Robot.database.autofilter_db import get_file_details
+from LuciferMoringstar_Robot.database._utils import get_size, is_subscribed
+from LuciferMoringstar_Robot.database._utils import lucifer_temp
 
-from translation import LuciferMovie
+from translation import LuciferMoringstar
 from config import BUTTONS, FORCES_SUB, CUSTOM_FILE_CAPTION, START_MSG, DEV_NAME, bot_info, ADMINS, team_name, team_link
 
-from LuciferMovie_Bot.modules._text_ import module
+from LuciferMoringstar_Robot.modules._text_ import module
 
 lock = asyncio.Lock()
 
-@LuciferMovie_Bot.on_callback_query()
-async def cb_handler(client: LuciferMovie_Bot, query):
+@lucifermoringstar_robot.on_callback_query()
+async def cb_handler(client: lucifermoringstar_robot, query):
     clicked = query.from_user.id
     try:
         typed = query.message.reply_to_message.from_user.id
@@ -43,11 +43,11 @@ async def cb_handler(client: LuciferMovie_Bot, query):
                     [InlineKeyboardButton("🔙 Back Page", callback_data=f"backgroup_{int(index)+1}_{keyword}")]
                 )
                 buttons.append(
-                    [InlineKeyboardButton(f"{int(index)+2}/{data['total']}", callback_data="pages"),
-                     InlineKeyboardButton("🗑️", callback_data="close")]
+                    [InlineKeyboardButton(f"📃 Pages {int(index)+2}/{data['total']}", callback_data="pages"),
+                     InlineKeyboardButton("Close 🗑️", callback_data="close")]
                 )
                 buttons.append(
-                    [InlineKeyboardButton(text="🤖 Check Bot PM 🤖", url=f"https://telegram.dog/{bot_info.BOT_USERNAME}")]
+                    [InlineKeyboardButton(text="🤖 CHECK MY PM 🤖", url=f"https://telegram.dog/{bot_info.BOT_USERNAME}")]
                 )
 
                 await query.edit_message_reply_markup( 
@@ -61,11 +61,11 @@ async def cb_handler(client: LuciferMovie_Bot, query):
                     [InlineKeyboardButton("🔙 Back Page", callback_data=f"backgroup_{int(index)+1}_{keyword}"),InlineKeyboardButton("Next Page ➡", callback_data=f"nextgroup_{int(index)+1}_{keyword}")]
                 )
                 buttons.append(
-                    [InlineKeyboardButton(f"{int(index)+2}/{data['total']}", callback_data="pages"),
-                     InlineKeyboardButton("🗑️", callback_data="close")]
+                    [InlineKeyboardButton(f"📃 Pages {int(index)+2}/{data['total']}", callback_data="pages"),
+                     InlineKeyboardButton("Close 🗑️", callback_data="close")]
                 )
                 buttons.append(
-                    [InlineKeyboardButton(text="🤖 Check Bot PM 🤖", url=f"https://telegram.dog/{bot_info.BOT_USERNAME}")]
+                    [InlineKeyboardButton(text="🤖 CHECK MY PM 🤖", url=f"https://telegram.dog/{bot_info.BOT_USERNAME}")]
                 )
 
                 await query.edit_message_reply_markup( 
@@ -88,11 +88,11 @@ async def cb_handler(client: LuciferMovie_Bot, query):
                     [InlineKeyboardButton("Next Page ➡", callback_data=f"nextgroup_{int(index)-1}_{keyword}")]
                 )
                 buttons.append(
-                    [InlineKeyboardButton(f"{int(index)}/{data['total']}", callback_data="pages"),
-                     InlineKeyboardButton("🗑️", callback_data="close")]
+                    [InlineKeyboardButton(f"📃 Pages {int(index)}/{data['total']}", callback_data="pages"),
+                     InlineKeyboardButton("Close 🗑️", callback_data="close")]
                 )
                 buttons.append(
-                    [InlineKeyboardButton(text="🤖 Check Bot PM 🤖", url=f"https://telegram.dog/{bot_info.BOT_USERNAME}")]
+                    [InlineKeyboardButton(text="🤖 CHECK MY PM 🤖", url=f"https://telegram.dog/{bot_info.BOT_USERNAME}")]
                 )
                 await query.edit_message_reply_markup( 
                     reply_markup=InlineKeyboardMarkup(buttons)
@@ -105,11 +105,11 @@ async def cb_handler(client: LuciferMovie_Bot, query):
                     [InlineKeyboardButton("🔙 Back Page", callback_data=f"backgroup_{int(index)-1}_{keyword}"),InlineKeyboardButton("Next Page ➡", callback_data=f"nextgroup_{int(index)-1}_{keyword}")]
                 )
                 buttons.append(
-                    [InlineKeyboardButton(f"{int(index)}/{data['total']}", callback_data="pages"),
-                     InlineKeyboardButton("🗑️", callback_data="close")]
+                    [InlineKeyboardButton(f"📃 Pages {int(index)}/{data['total']}", callback_data="pages"),
+                     InlineKeyboardButton("Close 🗑️", callback_data="close")]
                 )
                 buttons.append(
-                    [InlineKeyboardButton(text="🤖 Check Bot PM 🤖", url=f"https://telegram.dog/{bot_info.BOT_USERNAME}")]
+                    [InlineKeyboardButton(text="🤖 CHECK MY PM 🤖", url=f"https://telegram.dog/{bot_info.BOT_USERNAME}")]
                 )
 
                 await query.edit_message_reply_markup( 
@@ -135,8 +135,8 @@ async def cb_handler(client: LuciferMovie_Bot, query):
                     [InlineKeyboardButton("🔙 Back Page", callback_data=f"backbot_{int(index)+1}_{keyword}")]
                 )
                 buttons.append(
-                    [InlineKeyboardButton(f"{int(index)+2}/{data['total']}", callback_data="pages"),
-                     InlineKeyboardButton("🗑️", callback_data="close")]
+                    [InlineKeyboardButton(f"📃 Pages {int(index)+2}/{data['total']}", callback_data="pages"),
+                     InlineKeyboardButton("Close 🗑️", callback_data="close")]
                 )
 
                 await query.edit_message_reply_markup( 
@@ -150,8 +150,8 @@ async def cb_handler(client: LuciferMovie_Bot, query):
                     [InlineKeyboardButton("🔙 Back Page", callback_data=f"backbot_{int(index)+1}_{keyword}"),InlineKeyboardButton("Next Page ➡", callback_data=f"nextbot_{int(index)+1}_{keyword}")]
                 )
                 buttons.append(
-                    [InlineKeyboardButton(f"{int(index)+2}/{data['total']}", callback_data="pages"),
-                     InlineKeyboardButton("🗑️", callback_data="close")]
+                    [InlineKeyboardButton(f"📃 Pages {int(index)+2}/{data['total']}", callback_data="pages"),
+                     InlineKeyboardButton("Close 🗑️", callback_data="close")]
                 )
 
                 await query.edit_message_reply_markup( 
@@ -174,8 +174,8 @@ async def cb_handler(client: LuciferMovie_Bot, query):
                     [InlineKeyboardButton("Next Page ➡", callback_data=f"nextbot_{int(index)-1}_{keyword}")]
                 )
                 buttons.append(
-                    [InlineKeyboardButton(f"{int(index)}/{data['total']}", callback_data="pages"),
-                     InlineKeyboardButton("🗑️", callback_data="close")]
+                    [InlineKeyboardButton(f"📃 Pages {int(index)}/{data['total']}", callback_data="pages"),
+                     InlineKeyboardButton("Close 🗑️", callback_data="close")]
                 )
 
                 await query.edit_message_reply_markup( 
@@ -189,8 +189,8 @@ async def cb_handler(client: LuciferMovie_Bot, query):
                     [InlineKeyboardButton("🔙 Back Page", callback_data=f"backbot_{int(index)-1}_{keyword}"),InlineKeyboardButton("Next Page ➡", callback_data=f"nextbot_{int(index)-1}_{keyword}")]
                 )
                 buttons.append(
-                    [InlineKeyboardButton(f"{int(index)}/{data['total']}", callback_data="pages"),
-                     InlineKeyboardButton("🗑️", callback_data="close")]
+                    [InlineKeyboardButton(f"📃 Pages {int(index)}/{data['total']}", callback_data="pages"),
+                     InlineKeyboardButton("Close 🗑️", callback_data="close")]
                 )
 
                 await query.edit_message_reply_markup( 
@@ -201,7 +201,7 @@ async def cb_handler(client: LuciferMovie_Bot, query):
 # ---------- 📁 [ | 𝗚𝗘𝗧 𝗙𝗜𝗟𝗘𝗦 | ] 📁 ---------- #
 
 
-        elif query.data.startswith("LuciferMovie_Bot"):
+        elif query.data.startswith("lucifermoringstar_robot"):
             ident, file_id = query.data.split("#")
             files_ = await get_file_details(file_id)
             if not files_:
@@ -210,6 +210,7 @@ async def cb_handler(client: LuciferMovie_Bot, query):
             title = files.file_name
             size=get_size(files.file_size)
             caption=CUSTOM_FILE_CAPTION.format(mention=query.from_user.mention, title=title, size=size, caption=files.caption)
+
             try:
                 if FORCES_SUB and not await is_subscribed(client, query):
                     await query.answer(url=f"https://t.me/{bot_info.BOT_USERNAME}?start=subscribe")
@@ -220,7 +221,7 @@ async def cb_handler(client: LuciferMovie_Bot, query):
                         file_id=file_id,
                         caption=caption
                         )
-                    await query.answer('Check Bot PM, I have Sent Your Files In PM 📩',show_alert = True)
+                    await query.answer('🤖 Check PM, I have Sent Files In Pm 🤖',show_alert = True)
             except UserIsBlocked:
                 await query.answer('Unblock the bot mahn !',show_alert = True)
             except PeerIdInvalid:
@@ -243,7 +244,7 @@ async def cb_handler(client: LuciferMovie_Bot, query):
                 caption=CUSTOM_FILE_CAPTION.format(mention=query.from_user.mention, title=title, size=size, caption=files.caption)
 
                 buttons = [[
-                  InlineKeyboardButton('🔗 Movies Club', url='https://t.me/NewMoviesClub2022')
+                  InlineKeyboardButton('🧑‍💻 How To Own 🧑‍💻', url='https://t.me/Mo_Tech_Group')
                   ]]                 
                 
                 await query.answer()
@@ -261,58 +262,42 @@ async def cb_handler(client: LuciferMovie_Bot, query):
         elif query.data == "start":
             if query.from_user.id not in ADMINS: 
                 buttons = [[
-                 InlineKeyboardButton("🔗 Movie Club", url=f"https://t.me/+ZLfYBUbS-adiY2E1")
+                 InlineKeyboardButton
+                 InlineKeyboardButton("➕️ Add me to Your Chat ➕️", url=f"http://t.me/{bot_info.BOT_USERNAME}?startgroup=true")
                  ],[
                  InlineKeyboardButton("ℹ️ Help", callback_data="help"),
                  InlineKeyboardButton("😎 About", callback_data="about") 
                  ],[
-                 InlineKeyboardButton("🎭 Who Am I", callback_data="who")
+                 InlineKeyboardButton("🗳 Deploy", url="https://youtu.be/FCU_XJmyG_U"),
+                 InlineKeyboardButton("🤖 Update", url="https://t.me/Mo_Tech_Group")
                  ]]
             else:
                 buttons = [[
-                 InlineKeyboardButton("🔗 Movie Club", url=f"https://t.me/+ZLfYBUbS-adiY2E1")
+                 InlineKeyboardButton
+                 InlineKeyboardButton("➕️ Add me to Your Chat ➕️", url=f"http://t.me/{bot_info.BOT_USERNAME}?startgroup=true")
                  ],[
                  InlineKeyboardButton("ℹ️ Help", callback_data="bot_owner"),
                  InlineKeyboardButton("😎 About", callback_data="about") 
                  ],[
-                 InlineKeyboardButton("🎭 Who Am I", callback_data="who") 
-                 ]]
+                 InlineKeyboardButton("🗳 Deploy", url="https://youtu.be/FCU_XJmyG_U"),
+                 InlineKeyboardButton("🤖 Update", url="https://t.me/Mo_Tech_Group")
+                 ]]               
             await query.message.edit(text=START_MSG.format(mention=query.from_user.mention, bot_name=bot_info.BOT_NAME, bot_username=bot_info.BOT_USERNAME), reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
-          
+
         elif query.data == "help":
             buttons = [[
               InlineKeyboardButton("🏠 Home", callback_data="start"),
               InlineKeyboardButton("About 😎", callback_data="about")
               ]]               
-            await query.message.edit(text=LuciferMovie.HELP_MSG.format(mention=query.from_user.mention), reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
+            await query.message.edit(text=LuciferMoringstar.HELP_MSG.format(mention=query.from_user.mention), reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
 
         elif query.data == "about":
             buttons = [[
              InlineKeyboardButton("🏠 Home", callback_data="start"),
              InlineKeyboardButton("Close 🗑️", callback_data="close")
              ]]               
-            await query.message.edit(text=LuciferMovie.HeartBeat.format(mention=query.from_user.mention, bot_name=bot_info.BOT_NAME, bot_username=bot_info.BOT_USERNAME, dev_name=DEV_NAME), reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
+            await query.message.edit(text=LuciferMoringstar.ABOUT_MSG.format(mention=query.from_user.mention, bot_name=bot_info.BOT_NAME, bot_username=bot_info.BOT_USERNAME, dev_name=DEV_NAME), reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
 
-        elif query.data == "close":
-            await query.message.delete()
-        
-        elif query.data == "who":
-            buttons = [[ 
-             InlineKeyboardButton("🏠 Home", callback_data="start"),       
-             InlineKeyboardButton("Close 🗑️", callback_data="close")
-             ]]
-            await query.message.edit(text=LuciferMovie.WHO_AM_I.format(mention=query.from_user.mention, bot_name=bot_info.BOT_NAME, bot_username=bot_info.BOT_USERNAME, dev_name=DEV_NAME), reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
-        
-        elif query.data == "close":
-            await query.message.delete()
-        
-        elif query.data == "donate":
-            buttons = [[ 
-             InlineKeyboardButton("🏠 Home", callback_data="start"),       
-             InlineKeyboardButton("Close 🗑️", callback_data="close")
-             ]]
-            await query.message.edit(text=LuciferMovie.DONATE.format(mention=query.from_user.mention), reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
-        
         elif query.data == "close":
             await query.message.delete()
 
@@ -321,7 +306,7 @@ async def cb_handler(client: LuciferMovie_Bot, query):
              InlineKeyboardButton('🏠 Home', callback_data="start"),
              InlineKeyboardButton('About 😎', callback_data="about")
              ]]               
-            await query.message.edit(text=LuciferMovie.PROFESSOR_77.format(mention=query.from_user.mention), reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
+            await query.message.edit(text=LuciferMoringstar.PR0FESS0R_99.format(mention=query.from_user.mention), reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
 
 
         elif query.data == "autofilter":
@@ -360,9 +345,9 @@ async def cb_handler(client: LuciferMovie_Bot, query):
 
   
             if lock.locked():
-                return await query.answer('🗣️ Wait until previous process complete ✔️', show_alert=True)
+                return await query.answer('Wait until previous process complete.', show_alert=True)
             msg = query.message
-            await query.answer('Uploading...⏳', show_alert=True)
+            await query.answer('Processing...⏳', show_alert=True)
             if int(from_user) not in ADMINS:
                 await bot.send_message(int(from_user),
                                        f'Your Submission for indexing {chat} has been accepted by our moderators and will be added soon.',
@@ -370,7 +355,7 @@ async def cb_handler(client: LuciferMovie_Bot, query):
             await msg.edit(
                 "Starting Indexing",
                 reply_markup=InlineKeyboardMarkup(
-                  [[InlineKeyboardButton('✗ Cancel', callback_data='index_cancel')]]
+                  [[InlineKeyboardButton('Cancel', callback_data='index_cancel')]]
                   )
             )
             try:
@@ -383,11 +368,11 @@ async def cb_handler(client: LuciferMovie_Bot, query):
 
 
         elif query.data == "pages":
-            await query.answer("@LuciferMovie_Bot")
+            await query.answer("@LuciferMoringstar_Robot")
 
 
     else:
-        await query.answer("This Is Not Your Message 🤗",show_alert=True)
+        await query.answer("Please Request",show_alert=True)
 
 
 
