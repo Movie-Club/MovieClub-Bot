@@ -4,10 +4,10 @@ from pyrogram import Client as lucifermovie_bot
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram.errors import UserIsBlocked, PeerIdInvalid
 
-from lucifermovie_bot.admins.index_files import index_files_to_db
-from lucifermovie_bot.database.autofilter_db import get_file_details
-from lucifermovie_bot.database._utils import get_size, is_subscribed
-from lucifermovie_bot.database._utils import lucifer_temp
+from LuciferMovie_Bot.admins.index_files import index_files_to_db
+from LuciferMovie_Bot.database.autofilter_db import get_file_details
+from LuciferMovie_Bot.database._utils import get_size, is_subscribed
+from LuciferMovie_Bot.database._utils import lucifer_temp
 
 from translation import LuciferMovie
 from config import BUTTONS, FORCES_SUB, CUSTOM_FILE_CAPTION, START_MSG, DEV_NAME, bot_info, ADMINS, team_name, team_link
@@ -16,7 +16,7 @@ from LuciferMovie_Bot.modules._text_ import module
 
 lock = asyncio.Lock()
 
-@LuciferMovie_Bot.on_callback_query()
+@lucifermovie_bot.on_callback_query()
 async def cb_handler(client: lucifermovie_bot , query):
     clicked = query.from_user.id
     try:
