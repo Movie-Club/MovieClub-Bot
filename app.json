@@ -9,8 +9,8 @@
       "auto-filter",
       "bot"
     ],
-    "website": "https://github.com/PROFESSOR-77/Lucifer-Movie-Bot",
-    "repository": "https://github.com/PROFESSOR-77/Lucifer-Movie-Bot",
+    "website": "https://github.com/BIKASH-99/LuciferMovie-Bot",
+    "repository": "https://github.com/BIKASH-99/LuciferMovie-Bot",
     "env": {
         "BOT_TOKEN": {
             "description": "Your Bot Token From @botfather",
