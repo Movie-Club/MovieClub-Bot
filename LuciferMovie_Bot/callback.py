@@ -306,7 +306,7 @@ async def cb_handler(client: lucifermovie_bot , query):
              InlineKeyboardButton('🏠 Home', callback_data="start"),
              InlineKeyboardButton('About 😎', callback_data="about")
              ]]               
-            await query.message.edit(text=LuciferMovie.BIKASH-99.format(mention=query.from_user.mention), reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
+            await query.message.edit(text=LuciferMovie.BIKASH_99.format(mention=query.from_user.mention), reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
 
 
         elif query.data == "autofilter":
