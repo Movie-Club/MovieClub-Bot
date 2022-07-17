@@ -68,7 +68,7 @@ Thank You For Reading Patiently 🙏"""
 
 ╰──────[ 👑 ]───────╯"""
     
-    BIKASH-99 = """
+    BIKASH_99 = """
 **ADMIN COMMANDS**
 
  » /broadcast - Reply Any Media Or Message
