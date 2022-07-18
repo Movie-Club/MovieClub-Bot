@@ -53,8 +53,6 @@ Do Fork And Star The Repository If You Liked It.
 
 ----
 
-##
-
 ## 📍 Pre Requisites
 
 * `BOT_TOKEN`: Create a bot using [@BotFather](https://telegram.dog/BotFather), and get the Telegram API token.
