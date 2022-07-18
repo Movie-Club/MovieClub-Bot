@@ -76,3 +76,5 @@ Do Fork And Star The Repository If You Liked It.
 * `DATABASE_NAME`: Name of the database in [mongoDB](https://www.mongodb.com). For more help watch this [video](https://youtu.be/gBLTsH-IXr0)
 * `COLLECTION_NAME`: Name of the collections. Defaults to (Telegram_files). If you going to use same database, then use different collection name for each bot.
 * `USE_CAPTION_FILTER`: Whether bot should use captions to improve search results. (True/False)
+
+----
