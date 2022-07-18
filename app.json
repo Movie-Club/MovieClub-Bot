@@ -1,6 +1,7 @@
 {
     "name": "LuciferMovie_Bot",
     "description": "When you going to send File on Telegram Channel this bot will save that in database, So you can get file in Bot PM",
+    "logo": "https://telegra.ph/file/0ba08ae94dc4808007b9f.jpg"
     "stack": "container",
     "keywords": [
       "telegram",
