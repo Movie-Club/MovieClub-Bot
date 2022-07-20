@@ -10,8 +10,8 @@
       "filter",
       "bot"
     ],
-    "website": "https://youtube.com/c/MoTech_YT",
-    "repository": "https://github.com/PROFESSOR-77/Lucifer-Movie-Bot",
+    "website": "https://github.com/Movie-Club/MovieClub-Bot",
+    "repository": "https://github.com/Movie-Club/MovieClub-Bot",
     "env": {
         "BOT_TOKEN": {
             "description": "Your Bot Token From https://youtu.be/cB4UduCcNWs",
